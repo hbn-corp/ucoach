@@ -5,12 +5,10 @@ import {
 
     StyleSheet
 } from 'react-native';
-import {
-    ExpoLinksView
-} from '@expo/samples';
 
 export default function SignInScreen() {
     return (
+
         < View style={styles.container} >
             <TouchableOpacity onPress={this._onPressButton}>
       <Image
@@ -27,12 +25,10 @@ export default function SignInScreen() {
 
            
         </View>
+
     );
 }
 
-LinksScreen.navigationOptions = {
-    title: 'Links',
-};
 
 const styles = StyleSheet.create({
     container: {
