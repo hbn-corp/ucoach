@@ -7,7 +7,7 @@ import {
     ExpoLinksView
 } from '@expo/samples';
 
-export default function resultatCoatchScreen() {
+export default function resultsScreen() {
     return (
         < ScrollView style={styles.container} >
             <ExpoLinksView />

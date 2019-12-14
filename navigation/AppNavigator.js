@@ -10,15 +10,26 @@ import {
 } from 'react-navigation-stack';
 
 import SignInScreen from '../screens/SignInScreen';
+import AbonneeScreen from '../screens/abonneeScreen';
+import programmeScreen from '../screens/programmeScreen';
+import resultsScreen from '../screens/resultatCoatchScreen';
+
 
 const AuthStack = createStackNavigator({
   SignIn: SignInScreen
 });
 
-// const abonneeStack = createStackNavigator({
-//   Abonnee: AbonneeScreen
-// });
+const abonneeStack = createStackNavigator({
+  Abonnee: AbonneeScreen
+});
 
+const programmeStack = createStackNavigator({
+  programme: programmeScreen
+});
+
+const resultsStack = createStackNavigator({
+  results: resultsScreen
+});
 
 export default createAppContainer(
   createSwitchNavigator({
@@ -26,6 +37,9 @@ export default createAppContainer(
     // Read more at https://reactnavigation.org/docs/en/auth-flow.html
     Auth: AuthStack,
     Main: MainTabNavigator,
+    Abonnee: abonneeStack,
+    programme: programmeStack,
+    results: resultsStack,
   }, {
     initialRouteName: 'Auth',
   })
