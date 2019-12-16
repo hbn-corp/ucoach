@@ -3,33 +3,47 @@ import {
     StyleSheet,
     View,
     FlatList,
-    Button
+    TouchableOpacity,
+    Text
 } from 'react-native';
+import Card from '../components/Card'
+import styles from '../constants/style';
 
 
+class resultsScreen extends React.Component {
+    static navigationOptions = {
+        // headerTitle instead of title
+        title: 'results'
+    };
 
-const DATA = [
-    "rrr", "r", "rr"
-]
-export default function resultsScreen() {
-    return (
-        <View style={styles.container}>
-            <Button color="#00ff00" title="filter" onPress={() => { }} />
-            <FlatList
-                data={DATA}
-                renderItem={({ item }) => <Item title={item.title} />}
-                keyExtractor={item => item.id}
-            />
-        </View>
-    );
+    constructor(props) {
+        super(props);
+        this.state = {
+            list: [{ nom: "aa" }, { nom: "b" }, { nom: "aab" }, { nom: "ba" }, { nom: "aaa" }, { nom: "bab" }, { nom: "aaab" }]
+        }
+    }
+
+
+    _renderItem = ({ item, index }) => <Card nom={item.nom} />
+    onPress = () => { }
+    render() {
+        return (
+            <View style={styles.container}>
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={this.onPress}
+                >
+                    <Text> Filter </Text>
+                </TouchableOpacity>
+                <FlatList
+                    data={this.state.list}
+                    renderItem={this._renderItem}
+                    keyExtractor={(item) => item.nom}
+                />
+            </View>
+        );
+    }
 }
 
 
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingTop: 15,
-        backgroundColor: '#fff',
-    },
-});
+export default resultsScreen;
