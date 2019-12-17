@@ -1,22 +1,32 @@
 import React from 'react';
 import {
-    ScrollView,
-    StyleSheet
+    View,
+    Text,
+    ProgressBarAndroid
 } from 'react-native';
+
+import styles from '../constants/style'
 
 export default function abonneeScreen() {
     return (
-        < ScrollView style={styles.container} >
-
-        </ScrollView>
+        < View style={styles.container} >
+            <Text>
+                vous avais selectioné un truc
+            </Text>
+            < View >
+                <Text>
+                    Votre prochain Rendez-vous
+              </Text>
+                <Text>
+                    Jour, dd  mois Année
+              </Text>
+            </View>
+            <ProgressBarAndroid
+                styleAttr="Horizontal"
+                color="red"
+                indeterminate={false}
+                progress={0.5}
+            />
+        </View>
     );
 }
-
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingTop: 15,
-        backgroundColor: '#fff',
-    },
-});

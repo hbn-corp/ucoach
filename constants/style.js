@@ -10,7 +10,8 @@ export default styles = StyleSheet.create({
   container: {
     flex: 2,
     color: "black",
-    justifyContent: "flex-start"
+    alignItems: "center",
+    justifyContent: "center"
   },
   header: {
     flex: 1,
