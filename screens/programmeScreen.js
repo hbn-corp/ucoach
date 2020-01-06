@@ -1,7 +1,11 @@
 import React from 'react';
 import {
     ScrollView,
-    StyleSheet
+    StyleSheet,
+    View,
+    FlatList,
+    TouchableOpacity,
+    Text
 } from 'react-native';
 
 

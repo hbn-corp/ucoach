@@ -11,7 +11,7 @@ export default function abonneeScreen() {
     return (
         < View style={styles.container} >
             <Text>
-                vous avais selectioné un truc
+                Ici suivez vous entrainements et votre progres 
             </Text>
             < View >
                 <Text>
